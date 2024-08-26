@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Portfolio</title>
+    <link rel="shorcut icon" href="img/p66.jpg"type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+     <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Dani Dev</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+     </div>
+
+     <!-- SECCION INICIO -->
+      <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="img/hero.jpg" alt="">
+            </div>
+            <h1>DANI CASTAÑO</h1>
+            <h2>Desarrolladora de Software -  Frontend</h2>
+            <div class="redes">
+                <a href="https://www.linkedin.com/in/daniela-casta%C3%B1o-340941243/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.workana.com/freelancer/c601226ef8394406ad18caf7ba01a875" target="_blank"><i class="fa-brands fa-weebly"></i></a>
+                <!-- <a href="https://www.upwork.com/freelancers/~01943a93d8f0446bd6" target="_blank"><i class="fa-brands fa-upwork"></i></i></a> -->
+                <a href="https://github.com/Daniesteca" target="_blank"><i class="fa-brands fa-github" ></i></a>
+                <!-- <a href="#" target="_blank"><i class="fa-brands fa-skype"></i></a> -->
+                
+
+            </div>
+        </div>
+      </section>
+
+      <!-- SECCION SOBRE MI -->
+       <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mi</h2>
+            <p><span>Hola, soy Dani Castaño. </span>programadora en constante aprendizaje, me apasiona el desarrollo de software y disfruto trabajando en equipo para construir productos que faciliten la vida de las personas.
+                estoy buscando oportunidades para crecer profesionalmente y contribuir en proyectos open-source que me permitan aprender de otros desarrolladores y mejorar mis habilidades.
+                </p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                 <div class="col">
+                    <h3>Datos </h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>Cumpleaños</strong>
+                            00/00
+                        </li> -->
+                        <!-- <li>
+                            <strong>WhatsApp</strong>
+                            0000000000
+                        </li> -->
+                        <!-- <li>
+                            <strong>Email</strong>
+                            example@gmail.com
+                        </li> -->
+                        <!-- <li>
+                            <strong>Website</strong>
+                            www.example.com
+                        </li> -->
+                        <li>
+                            <strong>Ubicacion</strong>
+                            Colombia
+                        </li>
+                        <li>
+                            <strong>Ocupación</strong>
+                            Freelancer
+                        </li>
+                    </ul>
+
+                 </div>
+                 <!-- intereses -->
+                  <div class="col">
+                    <h3>intereses</h3>
+                    <div class="contenedor-intereses">
+                        <!-- <div class="intereses">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div> -->
+                        <div class="intereses">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="intereses">
+                            <i class="fa-solid fa-plane"></i>
+                            <span>VIAJAR</span>
+                        </div>
+                        <!-- <div class="intereses">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>MAC OS</span>
+                        </div> -->
+                        <div class="intereses">
+                            <i class="fa-solid fa-film"></i>
+                            <span>PELICULAS</span>
+                        </div>
+                        <div class="intereses">
+                            <i class="fa-solid fa-book"></i>
+                            <span>LIBROS</span>
+                        </div>
+                        <div class="intereses">
+                            <i class="fa-solid fa-car"></i>
+                            <span>AUTOS</span>
+                        </div>
+                        <div class="intereses">
+                            <i class="fa-solid fa-camera-retro"></i>
+                            <span>FOTOS</span>
+                        </div>
+
+                    </div>
+                  </div>
+            </div>
+            <!-- <button id="btn-descargar-cv">
+                Descargar CV <i class="fa-solid fa-download"></i>
+                <span class="overlay"></span>
+            </button> -->
+        </div>
+       </section>
+
+
+       <!-- SECTION SKILLS -->
+        <section class="skills" id="skills">
+            <div class="contenido-seccion">
+                <h2>skills</h2>
+                <div class="fila">
+
+                    <!-- technical skill -->
+                     <div class="col">
+                        <h3>Technical Skills</h3>
+
+                        <div class="skill">
+                            <span>HTML & CSS</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <span>Javascript</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>75%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <span>Python</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <span>MySql</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+
+                     <!-- professional skills -->
+
+                     <div class="col">
+                        <h3>Professional Skills</h3>
+                        <div class="skill">
+                            <span>Comunicación</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>80%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <span>Trabajo en equipo</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <span>Creatividad</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>99%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <span>Dedicacion</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>65%</span>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCION CURRICULUM -->
+
+        <section id="curriculum" class="curriculum">
+            <div class="contenido-seccion">
+                <h2>curriculum</h2>
+                <div class="fila">
+                    <div class="col izquierda">
+                        <h3>Educación</h3>
+                        <div class="item izq">
+                            <h4>Analisis y desarrollo de software</h4>
+                            <span class="casa">Sena</span>
+                            <span class="fecha">2022 - 2025</span>
+                            <p> En curso<br> Tecnología  en Análisis y desarrollo de software enfocado en Frontend.</p>
+                            <div class="conectori">
+                                <div class="circuloi"></div>
+                            </div>
+                        </div>
+
+                        <div class="item izq">
+                            <h4>Administracion empresarial</h4>
+                            <span class="casa">Corporacion Tecnologica Empresarial</span>
+                            <span class="fecha">2014 - 2015</span>
+                            <p>Técnico en administracion empresarial.</p>
+                            <div class="conectori">
+                                <div class="circuloi"></div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+                    <div class="col derecha">
+                        <h3>Experiencia Laboral</h3>
+                        <div class="item der">
+                            <h4>Analista Reporting</h4>
+                            <span class="casa">Emergia Econtact</span>
+                            <span class="fecha">2023</span>
+                            <p>Creación de informes con conexiones en sql server, Power BI y Microsoft Report Builder Para el seguimiento de KPI´s e  indicadores operativos. <br><br>
+                                Ejecutar sentencias en SQL server para actualizar dashboards</p>
+                            <div class="conectord">
+                                <div class="circulod"></div>
+                            </div>
+                        </div>
+
+                        <div class="item der">
+                            <h4>Tecnico de planificacion</h4>
+                            <span class="casa">Emergia Econtact</span>
+                            <span class="fecha">2015 - 2019</span>
+                            <p>Análisis de datos de diferentes servicios (NS, NA, AHT, productividades, y efectividades).<br><br>
+                                Envío de alertas sobre los KPI de los servicios, y propuestas de mejora. <br><br>
+                                Creación de dashboards con Excel y PowerBI para visualizaciones del estado de los servicios.</p>
+                            <div class="conectord">
+                                <div class="circulod"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCION PORTFOLIO -->
+        <section id="portfolio" class="portfolio">
+            <div class="contenido-seccion">
+                <h2>PORTFOLIO</h2>
+                <div class="galeria">
+                    <div class="proyecto">
+                        <img src="img/p1.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Landing page </h3><br>
+                            <p>venta de productos y servicios para negocios</p>
+                        </div>
+                    </div>
+
+                    <div class="proyecto">
+                        <img src="img/p8.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Aplicacion web</h3><br>
+                            <p> Diseño Intranet para la gestion interna de citas, pedidos, y facilitar los procesos internos de una empresa</p>
+                        </div>
+                    </div>
+
+                    <div class="proyecto">
+                        <img src="img/p3.jpg" alt="">
+                        <div class="overlay">
+                            <h3>E-comerce</h3><br>
+                            <p>Diseño de web para distribución, venta, compra, marketing y suministro de información de productos o servicios a través de Internet. </p>
+                        </div>
+                    </div>
+
+                    <div class="proyecto">
+                        <img src="img/p7.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Diseño de blog</h3><br>
+                            <p>página web en la que se publican regularmente artículos cortos con contenido actualizado y novedoso sobre cocina.</p>
+                        </div>
+                    </div>
+
+                    <div class="proyecto">
+                        <img src="img/p5.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Scaner de codigos QR y codigo de Barras</h3><br>
+                            <p>Para la identificacion y registro de productos acelerando el proceso de inventarios y de pagos, devoluciones o cambios</p>
+                        </div>
+                    </div>
+
+                    <div class="proyecto">
+                        <img src="img/p6.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Web de ventas</h3><br>
+                            <p>Pagina web para la comercializacion de productos digitales, como  venta de cursos online</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION CONTACTO -->
+         <section id="contacto" class="contacto">
+            <div class="contenido-seccion">
+                <h2>CONTACTO</h2>
+                <div class="fila">
+                    <!-- Formulario -->
+                    <div class="col">
+                        <form method="POST" action="" name="contact-form" >                          
+                            <input type="text" name="Nombre" placeholder="Tú Nombre">
+                            <input type="text" name="Telefono" placeholder="Numero telefónico">
+                            <input type="text" name="Email" placeholder="Direccion de correo">
+                            <input type="text" name="Asunto" placeholder="Tema">
+                            <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                            <button type="submit" id="submit" value="submit">
+                                Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                                <span class="overlay"></span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Mapa -->
+                    <div class="col">
+                        <img src="img/ubicacion.png" alt="">
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Manizales, Caldas
+                                </li>
+
+                                <!-- <li>
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    WhatsApp: 0000000000
+                                </li> -->
+
+                                <!-- <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Email: example@gmail.com
+                                </li> -->
+                                
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+         </section>
+
+         <!-- FOOTER -->
+          <footer>
+            <a href="#inicio" class="arriba"> 
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+            <div class="redes">
+                <a href="https://www.linkedin.com/in/daniela-casta%C3%B1o-340941243/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.workana.com/freelancer/c601226ef8394406ad18caf7ba01a875" target="_blank"><i class="fa-brands fa-weebly"></i></a>
+                <!-- <a href="https://www.upwork.com/freelancers/~01943a93d8f0446bd6" target="_blank"><i class="fa-brands fa-upwork"></i></i></a> -->
+                <a href="https://github.com/Daniesteca" target="_blank"><i class="fa-brands fa-github" ></i></a>
+                <!-- <a href="#" target="_blank"><i class="fa-brands fa-skype"></i></a> -->
+                
+
+            </div>
+
+          </footer>
+
+<script src="script.js"></script>
+<script src="googlesheets.js"></script>
+
+
+</body>
+</html>
