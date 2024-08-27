@@ -38,21 +38,12 @@ window.onscroll =function(){
     efectoHabilidades();
 }
 
-//Descarga cv
+//copiar email
 
-const downloadButton = document.querySelector('btn-descargar-cv');
+function copiarEmail(){
+    let email=document.getElementById("emailText");
+    let button=document.getElementById("botonCopiar");
 
-downloadButton.addEventListener('click', () => {
-    // Reemplaza 'tu-cv.pdf' con la ruta correcta de tu CV
-    const cvLink = 'doc/cv.pdf';
-
-    // Crea un enlace temporal
-    const link = document.createElement('a');
-    link.href = cvLink;
-    link.download = 'cv.pdf'; // Nombre del archivo al descargar
-
-    // Simula un clic en el enlace para iniciar la descarga
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-});
+    navigator.clipboard.writeText(email.textContent);
+    button.textContent='Copiado';
+}
