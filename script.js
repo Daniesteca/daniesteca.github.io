@@ -38,6 +38,7 @@ window.onscroll =function(){
     efectoHabilidades();
 }
 
+
 //copiar email
 
 function copiarEmail(){
@@ -47,3 +48,9 @@ function copiarEmail(){
     navigator.clipboard.writeText(email.textContent);
     button.textContent='Copiado';
 }
+
+//descargar cv
+function abrirEnNuevaPestaña() {
+    
+    window.open('https://www.canva.com/design/DAGPJB4DYwM/I5X3It_i4xrTCKvdo3Oq6w/view?utm_content=DAGPJB4DYwM&utm_campaign=designshare&utm_medium=link&utm_source=editor', '_blank');
+  }
