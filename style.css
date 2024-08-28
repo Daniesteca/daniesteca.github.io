@@ -569,6 +569,10 @@ html{
     margin-bottom: 0px;
 }
 
+.portfolio .galeria .proyecto .overlay:hover .nav_links{
+    color: #fff;
+}
+
 /* SECCION CONTACTO */
 
 .contacto{
