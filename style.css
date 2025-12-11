@@ -567,58 +567,121 @@ html{
     opacity: 0;
     transform: scale(0.8);
     pointer-events: none;
+    position: absolute;
 }
 
 
 /*fin botones filtros*/
 
-.portfolio .galeria{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.portfolio .galeria .proyecto{
-    position: relative;
-    max-width: 340px;
-    height: fit-content;
-    margin: 10px;
-    cursor: pointer;
-}
-.portfolio .galeria .proyecto img{
-    width: 100%;
-    display: block;
-}
-.portfolio .galeria .proyecto .overlay{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background: linear-gradient(rgba(155, 33, 221, 0.8),rgba(159, 28, 182, 0.8));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: 1s;
-    font-size: 18px;
-    letter-spacing: 3px;
-    opacity: 0;
+/* ===== CARRUSEL DE PORTFOLIO ===== */
+.carousel-wrapper{
+  position: relative;
+  max-width: 1100px;
+  margin: 20px auto 0;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.portfolio .galeria .proyecto .overlay h3{
-    margin-bottom: 20px;
-    transition: 1s;
-}
-.portfolio .galeria .proyecto .overlay:hover{
-    opacity: 1;
+.carousel-viewport{
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.portfolio .galeria .proyecto .overlay:hover h3{
-    margin-bottom: 0px;
+
+.carousel-track{
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  transition: transform .45s cubic-bezier(.22,.9,.35,1);
+  padding: 10px;
+  will-change: transform;
 }
 
-.portfolio .galeria .proyecto .overlay:hover .nav_links{
-    color: #fff;
+/* Cada slide tomará un ancho flexible: 1 slide visible en móvil, más en desktop */
+.carousel-slide{
+  max-width: none;
+  flex: 1 0 calc((100% - 36px) / 3);
+  background: #252a2e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
 }
+
+/* Imagen dentro del slide */
+.carousel-slide img{
+  width: 100%;
+  display:block;
+}
+
+/* Contenido estilo overlay resumido (puedes ajustar) */
+.carousel-slide .slide-content{
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+.carousel-slide .slide-content h3{
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.carousel-slide .slide-content p{
+  font-size: 13px;
+  line-height: 1.2;
+  opacity: .9;
+  margin-bottom: 8px;
+}
+.carousel-slide .slide-content .nav_links{
+  display:inline-block;
+  margin-top:6px;
+  text-decoration:none;
+  color: var(--color-primario);
+  border-bottom: 1px solid transparent;
+}
+.carousel-slide .slide-content .nav_links:hover{
+  border-bottom: 1px solid var(--color-primario);
+}
+
+
+
+/* Flechas */
+.carousel-nav{
+  background: var(--color-primario);
+  color:#fff;
+  border: none;
+  width:44px;
+  height:44px;
+  border-radius: 50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35);
+}
+.carousel-nav:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+
+/* Mensaje sin resultados */
+.no-results{
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.hidden{ display:none !important; }
+
+/* Responsive: mostrar más slides en pantallas anchas */
+@media (min-width: 900px){
+  .carousel-slide{ min-width: 320px; max-width: 340px; }
+}
+@media (min-width: 1200px){
+  .carousel-slide{ min-width: 360px; max-width: 380px;}
+}
+
+/* ===== FIN CARRUSEL DE PORTFOLIO ===== */
 
 /* SECCION CONTACTO */
 
@@ -828,3 +891,4 @@ footer .arriba{
 
 
 }
+

@@ -296,7 +296,23 @@
 
                 <!-- ==== GALERIA PROYECTOS ==== -->
 
-                <div class="galeria">
+
+                <!-- CARRUSEL (se rellenará dinámicamente) -->
+                <div class="carousel-wrapper">
+                <button class="carousel-nav prev" aria-label="Anterior">&lt;</button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track"></div>
+                </div>
+                <button class="carousel-nav next" aria-label="Siguiente">&gt;</button>
+                </div>
+
+                <!-- Alerta cuando no hay proyectos -->
+                <div class="no-results hidden">No se encontraron proyectos para este filtro.</div>
+
+                <!-- (Mantén aquí tus proyectos como fuente de datos — no se muestran, solo sirven para generar slides) -->
+                <div class="galeria fuente-proyectos" aria-hidden="true" style="display:none;">
+                <!-- PROYECTOS: conserva exactamente tu HTML actual con data-category -->
+
 
                     <div class="proyecto" data-category="fullstack javascript frontend">
                         <img src="img/p8.jpg" alt="">
@@ -360,7 +376,12 @@
                             <a href="https://github.com/Daniesteca/Web_ventas_barb_port" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
                         </div>
                     </div>
+              
+
                 </div>
+
+
+                
             </div>
         </section>
 
