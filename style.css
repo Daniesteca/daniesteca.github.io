@@ -508,182 +508,230 @@ html{
     position: relative;
     bottom: 4px ;
 }
-/* PORTAFOLIO */
-.portfolio{
+
+/* PORTAFOLIO ---------------------------------------------------------------------------------------------------------------------*/
+
+/* ============================
+   ESTILOS DEL PORTFOLIO + CARRUSEL
+============================ */
+
+/* Contenedor principal */
+.portfolio {
+    width: 100%;
+    padding: 40px 0;
     background-color: #252a2e;
-    color: #fff;
-    padding: 50px 20px;
 }
 
-.portfolio .contenido-seccion{
-    max-width: 1100px;
-    margin: auto;
-}
-.portfolio h2{
-    font-size: 48px;
-    font-family: 'Righteous';
+.contenido-seccion h2 {
     text-align: center;
-    padding: 20px 0;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: #8E2DE2;
 }
 
-/*Botones filtros*/
-
-/* === FILTROS DEL PORTAFOLIO === */
+/* ==== BOTONES DE FILTRO ==== */
 .portfolio-filtros {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .filtro-btn {
-    padding: 8px 18px;
-    font-size: 15px;
-    border: 2px solid var(--color-primario);
-    background: transparent;
-    color: #fff;
-    border-radius: 25px;
+    padding: 8px 16px;
+    background-color: #1e1e1e;
+    border: 1px solid #fff;
+    color: white;
     cursor: pointer;
-    transition: .3s ease;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 0.9rem;
 }
 
-.filtro-btn:hover {
-    background: var(--color-primario);
-}
-
+.filtro-btn:hover,
 .filtro-btn.active {
-    background: var(--color-primario);
+    background-color: #fff;
+    color: #000;
+}
+
+/* ==== MENSAJE CUANDO NO HAY PROYECTOS ==== */
+.no-results {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+.no-results.hidden {
+    display: none;
+}
+
+/* ================================
+   CARRUSEL
+================================ */
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* espacio entre flechas y carrusel */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Flechas laterales */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(140, 87, 224, 0.891);
+    color: white;
+    border: none;
+    font-size: 26px;
+    width: 42px;
+    height: 42px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.carousel-nav:hover {
+    transform: scale(1.1);
+    background: #b96bdb;
+}
+
+.carousel-nav.prev {
+    left: -45px;
+}
+
+.carousel-nav.next {
+    right: -45px;
+}
+
+.carousel-nav:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* TRACK (donde van las tarjetas) */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.40s ease;
+    will-change: transform;
+    justify-content: flex-start;
+}
+
+/* ============================
+   TARJETAS DEL CARRUSEL
+============================ */
+
+.carousel-card {
+    background: #111;
+    border: 1px solid #fff2;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    /* TAMAÑO FIJO */
+    min-width: 300px;
+    max-width: 300px;
+    height: 380px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.slide-content {
+    padding: 12px;
     color: #fff;
 }
 
-/* efecto suave al filtrar */
-.proyecto {
-    transition: .4s ease;
-    opacity: 1;
+.slide-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
-.proyecto.hidden {
-    opacity: 0;
-    transform: scale(0.8);
-    pointer-events: none;
-    position: absolute;
+.slide-content p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 6px;
 }
 
-
-/*fin botones filtros*/
-
-/* ===== CARRUSEL DE PORTFOLIO ===== */
-.carousel-wrapper{
-  position: relative;
-  max-width: 1100px;
-  margin: 20px auto 0;
-  display:flex;
-  align-items:center;
-  gap:10px;
+.slide-content a {
+    display: inline-block;
+    margin-top: 6px;
+    color: #00c3ff;
+    font-size: 0.85rem;
+    text-decoration: none;
 }
 
-.carousel-viewport{
-  overflow: hidden;
-  width: 100%;
-  border-radius: 10px;
+.slide-content a:hover {
+    text-decoration: underline;
 }
 
+/* ============================
+   RESPONSIVE
+============================ */
 
-.carousel-track{
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  transition: transform .45s cubic-bezier(.22,.9,.35,1);
-  padding: 10px;
-  will-change: transform;
-}
+/* Móvil: 1 tarjeta centrada */
+@media (max-width: 600px) {
 
-/* Cada slide tomará un ancho flexible: 1 slide visible en móvil, más en desktop */
-.carousel-slide{
-  max-width: none;
-  flex: 1 0 calc((100% - 36px) / 3);
-  background: #252a2e;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,.35);
-}
+    .carousel-container {
+        max-width: 350px;
+    }
 
-/* Imagen dentro del slide */
-.carousel-slide img{
-  width: 100%;
-  display:block;
-}
+    .carousel-track {
+        justify-content: center !important;
+    }
 
-/* Contenido estilo overlay resumido (puedes ajustar) */
-.carousel-slide .slide-content{
-  padding: 12px;
-  color: #fff;
-  font-size: 14px;
-}
-.carousel-slide .slide-content h3{
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-.carousel-slide .slide-content p{
-  font-size: 13px;
-  line-height: 1.2;
-  opacity: .9;
-  margin-bottom: 8px;
-}
-.carousel-slide .slide-content .nav_links{
-  display:inline-block;
-  margin-top:6px;
-  text-decoration:none;
-  color: var(--color-primario);
-  border-bottom: 1px solid transparent;
-}
-.carousel-slide .slide-content .nav_links:hover{
-  border-bottom: 1px solid var(--color-primario);
+    .carousel-card {
+        min-width: 260px;
+        max-width: 260px;
+        height: 360px;
+    }
+
+    .carousel-nav.prev {
+        left: -5px;
+    }
+
+    .carousel-nav.next {
+        right: -5px;
+    }
 }
 
 
-
-/* Flechas */
-.carousel-nav{
-  background: var(--color-primario);
-  color:#fff;
-  border: none;
-  width:44px;
-  height:44px;
-  border-radius: 50%;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow: 0 6px 14px rgba(0,0,0,.35);
-}
-.carousel-nav:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-}
-
-
-/* Mensaje sin resultados */
-.no-results{
-  text-align: center;
-  color: #fff;
-  margin-top: 20px;
-  font-size: 16px;
-}
-.hidden{ display:none !important; }
-
-/* Responsive: mostrar más slides en pantallas anchas */
-@media (min-width: 900px){
-  .carousel-slide{ min-width: 320px; max-width: 340px; }
-}
-@media (min-width: 1200px){
-  .carousel-slide{ min-width: 360px; max-width: 380px;}
-}
-
-/* ===== FIN CARRUSEL DE PORTFOLIO ===== */
-
-/* SECCION CONTACTO */
+/* SECCION CONTACTO -----------------------------------------------------------------------------*/
 
 .contacto{
     background-image: url(img/contact_bg.png);
@@ -773,6 +821,8 @@ html{
     display: inline-block;
     margin-right: 20px;
 }
+
+
 /* FOOTER */
 footer{
     background-color: #252a2e;
