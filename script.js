@@ -54,3 +54,28 @@ function abrirEnNuevaPestaña() {
     
     window.open('https://www.canva.com/design/DAGPJB4DYwM/I5X3It_i4xrTCKvdo3Oq6w/view?utm_content=DAGPJB4DYwM&utm_campaign=designshare&utm_medium=link&utm_source=editor', '_blank');
   }
+
+// FILTRAR PORTFOLIO
+
+    const filtros = document.querySelectorAll(".filtro-btn");
+    const proyectos = document.querySelectorAll(".proyecto");
+
+    filtros.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Cambiar estado activo
+            document.querySelector(".filtro-btn.active").classList.remove("active");
+            btn.classList.add("active");
+
+            const filtro = btn.dataset.filter;
+
+            proyectos.forEach(proyecto => {
+                const categorias = proyecto.dataset.category.split(" ");
+
+                if (filtro === "all" || categorias.includes(filtro)) {
+                    proyecto.classList.remove("hidden");
+                } else {
+                    proyecto.classList.add("hidden");
+                }
+            });
+        });
+    });

@@ -525,6 +525,53 @@ html{
     text-align: center;
     padding: 20px 0;
 }
+
+/*Botones filtros*/
+
+/* === FILTROS DEL PORTAFOLIO === */
+.portfolio-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filtro-btn {
+    padding: 8px 18px;
+    font-size: 15px;
+    border: 2px solid var(--color-primario);
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.filtro-btn:hover {
+    background: var(--color-primario);
+}
+
+.filtro-btn.active {
+    background: var(--color-primario);
+    color: #fff;
+}
+
+/* efecto suave al filtrar */
+.proyecto {
+    transition: .4s ease;
+    opacity: 1;
+}
+
+.proyecto.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+
+/*fin botones filtros*/
+
 .portfolio .galeria{
     display: flex;
     flex-wrap: wrap;

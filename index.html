@@ -283,9 +283,22 @@
         <section id="portfolio" class="portfolio">
             <div class="contenido-seccion">
                 <h2>PORTFOLIO</h2>
+
+                <!-- ==== BOTONES DE FILTRO ==== -->
+                <div class="portfolio-filtros">
+                    <button class="filtro-btn active" data-filter="all">Todos</button>
+                    <button class="filtro-btn" data-filter="frontend">Frontend</button>
+                    <button class="filtro-btn" data-filter="javascript">JavaScript</button>
+                    <button class="filtro-btn" data-filter="fullstack">FullStack</button>
+                    <button class="filtro-btn" data-filter="landing">Landing Page</button>
+                </div>
+
+
+                <!-- ==== GALERIA PROYECTOS ==== -->
+
                 <div class="galeria">
 
-                    <div class="proyecto">
+                    <div class="proyecto" data-category="fullstack javascript frontend">
                         <img src="img/p8.jpg" alt="">
                         <div class="overlay">
                             <h3>Aplicacion web</h3><br>
@@ -295,12 +308,10 @@
                             <p>jsonwebtoken | mysql2</p><br>
                             <p>sass | bootstrap</p><br>
                             <a href="https://github.com/Daniesteca/appWebNegocio/tree/main" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
-
-
                         </div>
                     </div>
 
-                    <div class="proyecto">
+                    <div class="proyecto" data-category="frontend javascript">
                         <img src="img/p3.jpg" alt="">
                         <div class="overlay">
                             <h3>E-comerce - Frontend mentor</h3><br>
@@ -310,7 +321,7 @@
                         </div>
                     </div>
 
-                    <div class="proyecto">
+                    <div class="proyecto" data-category="javascript frontend">
                         <img src="img/p5.jpg" alt="">
                         <div class="overlay">
                             <h3>Scaner de codigos QR y codigo de Barras</h3><br>
@@ -320,7 +331,7 @@
                         </div>
                     </div>
 
-                    <div class="proyecto">
+                    <div class="proyecto" data-category="frontend javascript">
                         <img src="img/p7.jpg" alt="">
                         <div class="overlay">
                             <h3>Diseño de blog</h3><br>
@@ -330,7 +341,7 @@
                         </div>
                     </div>
 
-                    <div class="proyecto">
+                    <div class="proyecto" data-category="landing frontend">
                         <img src="img/p6.jpg" alt="">
                         <div class="overlay">
                             <h3>Web de ventas</h3><br>
@@ -340,7 +351,7 @@
                         </div>
                     </div>
 
-                    <div class="proyecto">
+                    <div class="proyecto" data-category="landing frontend">
                         <img src="img/p1.jpg" alt="">
                         <div class="overlay">
                             <h3>Diseño de Landing page </h3><br>
@@ -349,9 +360,6 @@
                             <a href="https://github.com/Daniesteca/Web_ventas_barb_port" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </section>
@@ -420,7 +428,6 @@
 
 <script src="script.js"></script>
 <script src="googlesheets.js"></script>
-
 
 </body>
 </html>
