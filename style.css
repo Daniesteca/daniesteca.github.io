@@ -943,7 +943,10 @@ footer .arriba{
 }
 
 
-/* ===== POPUP =========================================================== */
+/* ========================================================================
+   POPUP — ESTILOS PARA PC (DESKTOP FIRST)
+   ======================================================================== */
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -969,19 +972,55 @@ footer .arriba{
 .popup-card {
     background: #1e1e1e;
     width: 90%;
-    max-width: 600px;
+    max-width: 900px;              /* MÁS ANCHO EN PC */
     border-radius: 12px;
-    padding: 20px;
+    padding: 30px;
     position: relative;
     box-shadow: 0 0 15px rgba(0,0,0,.4);
-    text-align: center;
     color: white;
+    text-align: left;              /* PC: alineación natural */
+}
+
+/* título centrado */
+.popup-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* layout de 2 columnas en PC */
+.popup-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
 }
 
 .popup-img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 15px;
+    display: block;
+}
+
+#popupDesc {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.popup-github {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0 auto;
+    padding: 12px 20px;
+    background: #9b59b6;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: .2s ease;
+    font-size: 1rem;
+}
+
+.popup-github:hover {
+    background: #b96bdb;
 }
 
 .popup-close {
@@ -995,21 +1034,39 @@ footer .arriba{
     cursor: pointer;
 }
 
-.popup-github {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 16px;
-    background: #9b59b6;
-    border-radius: 6px;
-    color: white;
-    text-decoration: none;
-    transition: .2s ease;
-}
-
-.popup-github:hover {
-    background: #b96bdb;
-}
-
 .hidden {
     display: none !important;
+}
+
+
+
+/* ========================================================================
+   POPUP — VERSION MÓVIL (corrige estructura para pantallas pequeñas)
+   ======================================================================== */
+@media (max-width: 768px) {
+
+    .popup-card {
+        max-width: 600px;
+        padding: 20px;
+        text-align: center;    /* móvil centrado */
+    }
+
+    /* columnas → layout vertical */
+    .popup-content {
+        display: block;
+    }
+
+    .popup-img {
+        margin-bottom: 15px;
+    }
+
+    #popupDesc {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .popup-github {
+        margin-top: 15px;
+        font-size: 0.95rem;
+    }
 }
