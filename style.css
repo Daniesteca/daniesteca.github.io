@@ -678,6 +678,12 @@ html, body {
     object-fit: cover;
 }
 
+/* La descripción larga NO aparece en el carrusel */
+.carousel-card .desc-larga {
+    display: none;
+}
+
+
 .slide-content {
     padding: 12px;
     color: #fff;

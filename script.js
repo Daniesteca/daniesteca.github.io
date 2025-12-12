@@ -81,8 +81,17 @@ function abrirEnNuevaPestaña() {
         slides = Array.from(fuenteProyectos).map(p => ({
             img: p.querySelector("img")?.src ?? "",
             title: p.querySelector(".overlay h3")?.textContent.trim() ?? "",
-            desc: Array.from(p.querySelectorAll(".overlay p"))
-                .map(x => x.textContent.trim()).join(" "),
+                desc: Array.from(p.querySelectorAll(".overlay p:not(.desc-larga)"))
+                    .map(x => x.textContent.trim())
+                    .join(" "),
+            descLarga: p.querySelector(".desc-larga")?.textContent.trim() ?? "",
+
+            
+            //  Todo el contenido para el popup
+            descCompleta: Array.from(p.querySelectorAll(".overlay p"))
+                .map(x => x.textContent.trim())
+                .join("<br>"),
+
             link: p.querySelector(".overlay .nav_links")?.href ?? null,
             categories: (p.dataset.category || "").split(/\s+/).filter(Boolean)
         }));
@@ -313,7 +322,7 @@ function mostrarProyecto(i) {
 
     popupImg.src = p.img;
     popupTitle.textContent = p.title;
-    popupDesc.textContent = p.desc;
+    popupDesc.innerHTML = p.descCompleta;
     popupLink.href = p.link ?? "#";
 }
 
