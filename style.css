@@ -546,7 +546,7 @@ html, body {
 .filtro-btn {
     padding: 8px 16px;
     background-color: #1e1e1e;
-    border: 1px solid #fff;
+    border: 1px solid var(--color-primario);
     color: white;
     cursor: pointer;
     border-radius: 5px;
@@ -556,8 +556,8 @@ html, body {
 
 .filtro-btn:hover,
 .filtro-btn.active {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-primario);
+    color: white;
 }
 
 /* ==== MENSAJE CUANDO NO HAY PROYECTOS ==== */
