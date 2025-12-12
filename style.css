@@ -17,6 +17,12 @@ html{
     /* permite deslizar cuando hago clic en los links del menu */
     scroll-behavior: smooth;
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* MENU */
 .contenedor-header{
     background: #1e2326;
@@ -700,36 +706,6 @@ html{
     text-decoration: underline;
 }
 
-/* ============================
-   RESPONSIVE
-============================ */
-
-/* Móvil: 1 tarjeta centrada */
-@media (max-width: 600px) {
-
-    .carousel-container {
-        max-width: 350px;
-    }
-
-    .carousel-track {
-        justify-content: center !important;
-    }
-
-    .carousel-card {
-        min-width: 260px;
-        max-width: 260px;
-        height: 360px;
-    }
-
-    .carousel-nav.prev {
-        left: -5px;
-    }
-
-    .carousel-nav.next {
-        right: -5px;
-    }
-}
-
 
 /* SECCION CONTACTO -----------------------------------------------------------------------------*/
 
@@ -870,7 +846,7 @@ footer .arriba{
     line-height: 50px;
     font-size: 18px;
 }
-/* SECCION RESPONSIVE */
+/* SECCION RESPONSIVE ==========================================================================*/
 
 @media screen and (max-width:980px){
     nav{
@@ -940,6 +916,37 @@ footer .arriba{
     }
 
 
+}
+
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+/* Móvil: 1 tarjeta centrada */
+@media (max-width: 600px) {
+
+    .carousel-container {
+        max-width: 350px;
+    }
+
+    .carousel-track {
+        justify-content: center !important;
+    }
+
+    .carousel-card {
+        min-width: 260px;
+        max-width: 260px;
+        height: 360px;
+    }
+
+    .carousel-nav.prev {
+        left: -5px;
+    }
+
+    .carousel-nav.next {
+        right: -5px;
+    }
 }
 
 
@@ -1068,5 +1075,101 @@ footer .arriba{
     .popup-github {
         margin-top: 15px;
         font-size: 0.95rem;
+    }
+}
+
+
+/* ========================= */
+/*  AJUSTES GENERALES MOBILE */
+/* ========================= */
+@media (max-width: 480px) {
+
+    /* Evita que cualquier elemento genere scroll horizontal */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ========================= */
+    /* BOTONES DE FILTROS       */
+    /* ========================= */
+    .portfolio-filtros {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .portfolio-filtros .filtro-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+        flex: 1 1 calc(50% - 16px); /* 2 por fila */
+        text-align: center;
+        white-space: nowrap; /* evita cortes raros */
+    }
+
+    /* ========================= */
+    /*       CARRUSEL            */
+    /* ========================= */
+
+    .carousel-wrapper {
+        position: relative;
+        padding: 0 25px; /* espacio para flechas */
+        overflow: hidden; /* clave para evitar scroll lateral */
+    }
+
+    .carousel-container {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    /* ========================= */
+    /*   TARJETAS DEL CARRUSEL   */
+    /* ========================= */
+    .carousel-card {
+        min-width: 85%;      /* tamaño ideal en móvil */
+        max-width: 85%;
+        margin: 0 auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .carousel-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ========================= */
+    /*     BOTONES FLECHAS       */
+    /* ========================= */
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #9f53ff;     /* o tu color morado */
+        border: none;
+        padding: 8px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 22px;
+        line-height: 16px;
+        color: #fff;
+        z-index: 20;
+    }
+
+    .carousel-nav.prev {
+        left: 0;  /* pegado al borde SIN romper layout */
+    }
+
+    .carousel-nav.next {
+        right: 0;
     }
 }
