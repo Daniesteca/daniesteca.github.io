@@ -279,128 +279,124 @@
 
         </section>
 
-<!-- ========================= -->
-<!--       SECCIÓN PORTFOLIO   -->
-<!-- ========================= -->
-<section id="portfolio" class="portfolio">
-    <div class="contenido-seccion">
-        <h2>PORTFOLIO</h2>
+        <!-- ========================= -->
+        <!--       SECCIÓN PORTFOLIO   -->
+        <!-- ========================= -->
+        <section id="portfolio" class="portfolio">
+            <div class="contenido-seccion">
+                <h2>PORTFOLIO</h2>
 
-        <!-- ==== BOTONES DE FILTRO ==== -->
-        <div class="portfolio-filtros">
-            <button class="filtro-btn active" data-filter="all">Todos</button>
-            <button class="filtro-btn" data-filter="frontend">Frontend</button>
-            <button class="filtro-btn" data-filter="javascript">JavaScript</button>
-            <button class="filtro-btn" data-filter="fullstack">FullStack</button>
-            <button class="filtro-btn" data-filter="landing">Landing Page</button>
-        </div>
-
-        <!-- ==== CARRUSEL ==== -->
-
-        <div class="carousel-wrapper">
-
-             <button class="carousel-nav prev">‹</button>
-
-            <div class="carousel-container">
-
-                <div class="carousel-track" id="carouselTrack">
-                    <!-- Aquí se insertan dinámicamente las tarjetas renderizadas -->
+                <!-- ==== BOTONES DE FILTRO ==== -->
+                <div class="portfolio-filtros">
+                    <button class="filtro-btn active" data-filter="all">Todos</button>
+                    <button class="filtro-btn" data-filter="frontend">Frontend</button>
+                    <button class="filtro-btn" data-filter="javascript">JavaScript</button>
+                    <button class="filtro-btn" data-filter="fullstack">FullStack</button>
+                    <button class="filtro-btn" data-filter="landing">Landing Page</button>
                 </div>
-            </div>
 
-            <button class="carousel-nav next">›</button>
-        </div>
+                <!-- ==== CARRUSEL ==== -->
 
-        <!-- Alerta cuando no hay proyectos -->
-        <div class="no-results hidden">No se encontraron proyectos para este filtro.</div>
+                <div class="carousel-wrapper">
 
-        <!-- Fuente oculta de proyectos (se usa como base para JS) -->
-        <div class="galeria fuente-proyectos" aria-hidden="true" style="display:none;">
+                    <button class="carousel-nav prev">‹</button>
 
-            <!-- === TARJETA 1 === -->
-            <div class="carousel-card" data-category="frontend fullstack javascript">
-                <img src="img/p8.jpg">
-                <div class="overlay">
-                      <h3>Aplicacion web</h3><br>
-                        <p> Diseño de aplicacion web para la gestion interna de citas, pedidos, y facilitar los procesos internos de una empresa</p><br>
-                        <p>Html | CSS | JavaScript</p><br>
-                        <p>Node | Express | ejs</p><br>
-                        <p>jsonwebtoken | mysql2</p><br>
-                        <p>sass | bootstrap</p><br>
-                        <a href="https://github.com/Daniesteca/appWebNegocio/tree/main" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                    <div class="carousel-container">
+
+                        <div class="carousel-track" id="carouselTrack">
+                            <!-- Aquí se insertan dinámicamente las tarjetas renderizadas -->
+                        </div>
+                    </div>
+
+                    <button class="carousel-nav next">›</button>
+                </div>
+
+                <!-- Alerta cuando no hay proyectos -->
+                <div class="no-results hidden">No se encontraron proyectos para este filtro.</div>
+
+                <!-- Fuente oculta de proyectos (se usa como base para JS) -->
+                <div class="galeria fuente-proyectos" aria-hidden="true" style="display:none;">
+
+                    <!-- === TARJETA 1 === -->
+                    <div class="carousel-card" data-category="frontend fullstack javascript">
+                        <img src="img/p8.jpg">
+                        <div class="overlay">
+                            <h3>Aplicacion web</h3><br>
+                                <p> Diseño de aplicacion web para la gestion interna de citas, pedidos, y facilitar los procesos internos de una empresa</p><br>
+                                <p>Html | CSS | JavaScript</p><br>
+                                <p>Node | Express | ejs</p><br>
+                                <p>jsonwebtoken | mysql2</p><br>
+                                <p>sass | bootstrap</p><br>
+                                <a href="https://github.com/Daniesteca/appWebNegocio/tree/main" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                                
+                        </div>
+                    </div>
+
+                    <!-- === TARJETA 2 === -->
+                    <div class="carousel-card" data-category="fullstack javascript frontend">
+                        <img src="img/p3.jpg">
+                        <div class="overlay">
+                            <h3>E-comerce - Frontend mentor</h3><br>
+                            <p>Ejercicio de Frontendmentor.io donde se diseña un E-commerce para una pagina de venta de zapatos </p><br>
+                            <p>Html | CSS | JavaScript | Sass</p><br>
+                            <a href="https://github.com/Daniesteca/ecommerce-tennis" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- === TARJETA 3 === -->
+                    <div class="carousel-card" data-category="javascript">
+                        <img src="img/p5.jpg">
+                        <div class="overlay">
+                            <h3>Scaner de codigos QR y codigo de Barras</h3><br>
+                            <p>Para la identificacion y registro de productos acelerando el proceso de inventarios y de pagos, devoluciones o cambios</p><br>
+                            <p>Html | CSS | JavaScript</p><br>
+                            <a href="https://github.com/Daniesteca/codigo_barras" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
                         
-                </div>
+                        </div>
+                    </div>
+
+                    <!-- === TARJETA 4 === -->
+                    <div class="carousel-card" data-category="javascript ">
+                        <img src="img/p7.jpg">
+                        <div class="overlay">
+                            <h3>Diseño de blog</h3><br>
+                            <p>página web en la que se publican regularmente artículos cortos con contenido actualizado y novedoso sobre cocina.</p><br>
+                            <p>Html | CSS | JavaScript</p><br>
+                            <a href="https://github.com/Daniesteca/Cocina_para_todos" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                        
+                        </div>
+                    </div>
+
+                    <!-- === TARJETA 5 === -->
+                    <div class="carousel-card" data-category="frontend javascript">
+                        <img src="img/p6.jpg">
+                        <div class="overlay">
+                            <h3>Web de ventas</h3><br>
+                            <p>Pagina web para la comercializacion de productos digitales, como  venta de cursos online</p><br>
+                            <p>Html | CSS | JavaScript</p><br>
+                            <a href="https://github.com/Daniesteca/Landing-Page-Css" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                        
+                        </div>
+                    </div>
+
+                    <!-- === TARJETA 6 === -->
+                    <div class="carousel-card" data-category="landing frontend">
+                        <img src="img/p1.jpg">
+                        <div class="overlay">
+                            <h3>Diseño de Landing page </h3><br>
+                            <p>venta de productos y servicios para negocios</p><br>
+                            <p>HTML | CSS</p><br>
+                            <a href="https://github.com/Daniesteca/Web_ventas_barb_port" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                        
+                        </div>
+                    </div>
+
+                </div><!-- FIN FUENTE DE PROYECTOS -->
+
+
+
             </div>
-
-            <!-- === TARJETA 2 === -->
-            <div class="carousel-card" data-category="fullstack javascript frontend">
-                <img src="img/p3.jpg">
-                <div class="overlay">
-                    <h3>E-comerce - Frontend mentor</h3><br>
-                    <p>Ejercicio de Frontendmentor.io donde se diseña un E-commerce para una pagina de venta de zapatos </p><br>
-                    <p>Html | CSS | JavaScript | Sass</p><br>
-                    <a href="https://github.com/Daniesteca/ecommerce-tennis" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
-                </div>
-            </div>
-
-            <!-- === TARJETA 3 === -->
-            <div class="carousel-card" data-category="javascript">
-                <img src="img/p5.jpg">
-                <div class="overlay">
-                    <h3>Scaner de codigos QR y codigo de Barras</h3><br>
-                    <p>Para la identificacion y registro de productos acelerando el proceso de inventarios y de pagos, devoluciones o cambios</p><br>
-                    <p>Html | CSS | JavaScript</p><br>
-                    <a href="https://github.com/Daniesteca/codigo_barras" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
-                
-                </div>
-            </div>
-
-            <!-- === TARJETA 4 === -->
-            <div class="carousel-card" data-category="javascript ">
-                <img src="img/p7.jpg">
-                <div class="overlay">
-                    <h3>Diseño de blog</h3><br>
-                    <p>página web en la que se publican regularmente artículos cortos con contenido actualizado y novedoso sobre cocina.</p><br>
-                    <p>Html | CSS | JavaScript</p><br>
-                    <a href="https://github.com/Daniesteca/Cocina_para_todos" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
-                
-                </div>
-            </div>
-
-            <!-- === TARJETA 5 === -->
-            <div class="carousel-card" data-category="frontend javascript">
-                <img src="img/p6.jpg">
-                <div class="overlay">
-                    <h3>Web de ventas</h3><br>
-                    <p>Pagina web para la comercializacion de productos digitales, como  venta de cursos online</p><br>
-                    <p>Html | CSS | JavaScript</p><br>
-                    <a href="https://github.com/Daniesteca/Landing-Page-Css" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
-                
-                </div>
-            </div>
-
-            <!-- === TARJETA 6 === -->
-            <div class="carousel-card" data-category="landing frontend">
-                <img src="img/p1.jpg">
-                <div class="overlay">
-                    <h3>Diseño de Landing page </h3><br>
-                    <p>venta de productos y servicios para negocios</p><br>
-                    <p>HTML | CSS</p><br>
-                    <a href="https://github.com/Daniesteca/Web_ventas_barb_port" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
-                
-                </div>
-            </div>
-
-        </div><!-- FIN FUENTE DE PROYECTOS -->
-
-
-
-    </div>
-</section>
-
-
-        
-
+        </section>
 
         <!-- SECCION CONTACTO -->
          <section id="contacto" class="contacto">
@@ -464,8 +460,29 @@
 
           </footer>
 
+          <!-- ===================== POPUP DETALLE ===================== -->
+            <div id="popupProyecto" class="popup-overlay hidden">
+                <div class="popup-card">
+
+                    <button class="popup-close">×</button>
+
+                    <img id="popupImg" src="" alt="Proyecto" class="popup-img">
+
+                    <h3 id="popupTitle"></h3>
+
+                    <p id="popupDesc"></p>
+
+                    <a id="popupLink" href="#" target="_blank" class="popup-github">
+                        <i class="fa-brands fa-github"></i> Ver repositorio
+                    </a>
+                </div>
+            </div>
+            <!-- ========================================================= -->
+
 <script src="script.js"></script>
 <script src="googlesheets.js"></script>
+
+
 
 </body>
 </html>

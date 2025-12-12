@@ -1,4 +1,9 @@
+
+// Items visibles actualmente en el carrusel
+let currentItems = [];
+
 let menuVisible = false;
+
 //funcion que oculta o muestra el menu
 
 function mostrarOcultarMenu(){
@@ -56,10 +61,9 @@ function abrirEnNuevaPestaña() {
 
   /* === CARRUSEL + FILTROS + TAMAÑO FIJO === */
 (function () {
-
+    const track = document.getElementById("carouselTrack");
     const filtros = document.querySelectorAll(".filtro-btn");
     const fuenteProyectos = document.querySelectorAll(".fuente-proyectos .carousel-card");
-    const track = document.querySelector("#carouselTrack");
     const prevBtn = document.querySelector(".carousel-nav.prev");
     const nextBtn = document.querySelector(".carousel-nav.next");
     const noResults = document.querySelector(".no-results");
@@ -126,6 +130,7 @@ function abrirEnNuevaPestaña() {
         updateButtons(items.length);
         goTo(0);
         restartAutoSlide();
+        currentItems = items;
     }
 
     /* -----------------------------------
@@ -254,6 +259,21 @@ function abrirEnNuevaPestaña() {
     });
 
     /* -----------------------------------
+   CLICK EN TARJETAS → ABRIR POPUP
+    ----------------------------------- */
+    track.addEventListener("click", function (e) {
+    const card = e.target.closest(".carousel-card");
+    if (!card) return;
+
+    // índice de la tarjeta dentro del track
+    const nodes = Array.from(track.children);
+    const index = nodes.indexOf(card);
+    if (index < 0 || !currentItems[index]) return;
+
+    stopAutoSlide?.();
+    abrirPopup(currentItems[index]);
+    });
+    /* -----------------------------------
        INIT
     ----------------------------------- */
     function init() {
@@ -263,4 +283,47 @@ function abrirEnNuevaPestaña() {
     }
 
     init();
+    
 })();
+
+
+
+/* ========== POPUP DE DETALLE (INTEGRACIÓN CORRECTA) ========== */
+
+/* Obtén los nodos del DOM del popup (asegúrate de que este HTML esté en la página) */
+const popup = document.getElementById("popupProyecto");
+const popupImg = document.getElementById("popupImg");
+const popupTitle = document.getElementById("popupTitle");
+const popupDesc = document.getElementById("popupDesc");
+const popupLink = document.getElementById("popupLink");
+const popupCloseBtn = document.querySelector(".popup-close");
+
+/* abrir popup con datos del proyecto (objeto con img, title, desc, link) */
+function abrirPopup(proyecto) {
+  if (!proyecto) return;
+  popupImg.src = proyecto.img || "";
+  popupTitle.textContent = proyecto.title || "";
+  popupDesc.textContent = proyecto.desc || "";
+  popupLink.href = proyecto.link || "#";
+  // muestra
+  popup.classList.remove("hidden");
+  popup.classList.add("active");
+}
+
+/* cerrar */
+function cerrarPopup() {
+  popup.classList.remove("active");
+  popup.classList.add("hidden");
+}
+
+/* listeners de cierre */
+if (popupCloseBtn) popupCloseBtn.addEventListener("click", cerrarPopup);
+if (popup) {
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) cerrarPopup(); // click fuera del card
+  });
+}
+
+
+
+
