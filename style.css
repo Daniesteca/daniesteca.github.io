@@ -678,10 +678,25 @@ html, body {
     object-fit: cover;
 }
 
+/* Link morado en las tarjetas del carrusel */
+.carousel-card .nav_links {
+    color: var(--color-primario);       /* MORADO PRINCIPAL */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Hover */
+.carousel-card .nav_links:hover {
+    color: var(--color-primario);       /* MORADO MÁS CLARO */
+}
+
+
 /* La descripción larga NO aparece en el carrusel */
 .carousel-card .desc-larga {
     display: none;
 }
+
+
 
 
 .slide-content {
