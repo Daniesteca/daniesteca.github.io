@@ -261,18 +261,19 @@ function abrirEnNuevaPestaña() {
     /* -----------------------------------
    CLICK EN TARJETAS → ABRIR POPUP
     ----------------------------------- */
+
     track.addEventListener("click", function (e) {
     const card = e.target.closest(".carousel-card");
     if (!card) return;
 
-    // índice de la tarjeta dentro del track
     const nodes = Array.from(track.children);
     const index = nodes.indexOf(card);
     if (index < 0 || !currentItems[index]) return;
 
     stopAutoSlide?.();
-    abrirPopup(currentItems[index]);
-    });
+    abrirPopup(currentItems, index);
+});
+
     /* -----------------------------------
        INIT
     ----------------------------------- */
@@ -288,9 +289,10 @@ function abrirEnNuevaPestaña() {
 
 
 
-/* ========== POPUP DE DETALLE (INTEGRACIÓN CORRECTA) ========== */
+/* ============================================================
+   POPUP DE DETALLE + NAVEGACIÓN ENTRE PROYECTOS (ADAPTADO)
+   ============================================================ */
 
-/* Obtén los nodos del DOM del popup (asegúrate de que este HTML esté en la página) */
 const popup = document.getElementById("popupProyecto");
 const popupImg = document.getElementById("popupImg");
 const popupTitle = document.getElementById("popupTitle");
@@ -298,32 +300,53 @@ const popupDesc = document.getElementById("popupDesc");
 const popupLink = document.getElementById("popupLink");
 const popupCloseBtn = document.querySelector(".popup-close");
 
-/* abrir popup con datos del proyecto (objeto con img, title, desc, link) */
-function abrirPopup(proyecto) {
-  if (!proyecto) return;
-  popupImg.src = proyecto.img || "";
-  popupTitle.textContent = proyecto.title || "";
-  popupDesc.textContent = proyecto.desc || "";
-  popupLink.href = proyecto.link || "#";
-  // muestra
-  popup.classList.remove("hidden");
-  popup.classList.add("active");
+const btnPrev = document.querySelector(".popup-prev");
+const btnNext = document.querySelector(".popup-next");
+
+let popupIndex = 0;           // índice del proyecto dentro de currentItems
+let popupItems = [];          // array actual del carrusel (filtrado o no)
+
+/* Mostrar proyecto según índice */
+function mostrarProyecto(i) {
+    const p = popupItems[i];
+    if (!p) return;
+
+    popupImg.src = p.img;
+    popupTitle.textContent = p.title;
+    popupDesc.textContent = p.desc;
+    popupLink.href = p.link ?? "#";
 }
 
-/* cerrar */
+/* Abrir popup: recibe (array, índice) */
+function abrirPopup(items, index) {
+    popupItems = items;
+    popupIndex = index;
+
+    mostrarProyecto(popupIndex);
+
+    popup.classList.remove("hidden");
+    popup.classList.add("active");
+}
+
+/* Navegación dentro del popup */
+btnPrev.addEventListener("click", () => {
+    popupIndex = (popupIndex - 1 + popupItems.length) % popupItems.length;
+    mostrarProyecto(popupIndex);
+});
+
+btnNext.addEventListener("click", () => {
+    popupIndex = (popupIndex + 1) % popupItems.length;
+    mostrarProyecto(popupIndex);
+});
+
+/* Cerrar */
 function cerrarPopup() {
-  popup.classList.remove("active");
-  popup.classList.add("hidden");
+    popup.classList.remove("active");
+    popup.classList.add("hidden");
 }
 
-/* listeners de cierre */
 if (popupCloseBtn) popupCloseBtn.addEventListener("click", cerrarPopup);
-if (popup) {
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) cerrarPopup(); // click fuera del card
-  });
-}
 
-
-
-
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) cerrarPopup();
+});

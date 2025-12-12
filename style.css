@@ -944,6 +944,32 @@ footer .arriba{
 }
 
 
+/* ===================== FLECHAS POPUP ===================== */
+.popup-prev,
+.popup-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    border: none;
+    color: var(--color-primario);
+    font-size: 32px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .2s ease;
+    z-index: 20;
+}
+
+.popup-prev { left: -10px; }
+.popup-next { right: -10px; }
+
+.popup-prev:hover,
+.popup-next:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+
 /* ===================================================================================
    RESPONSIVE GENERAL
 ====================================================================================== */
@@ -1099,7 +1125,7 @@ footer .arriba{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: #9f53ff;     
+        background: var(--color-primario);     
         border: none;
         padding: 8px 10px;
         border-radius: 50%;
@@ -1149,4 +1175,17 @@ footer .arriba{
         margin-top: 15px;
         font-size: 0.95rem;
     }
+
+    /* flechas de desplazamiento */
+    .popup-prev,
+    .popup-next {
+        font-size: 24px;
+        padding: 6px 10px;
+        top: auto;
+        bottom: 20px;
+        transform: none;
+    }
+
+    .popup-prev { left: 20px; }
+    .popup-next { right: 20px; }
 }
