@@ -92,7 +92,13 @@ function abrirEnNuevaPestaña() {
                 .map(x => x.textContent.trim())
                 .join("<br>"),
 
-            link: p.querySelector(".overlay .nav_links")?.href ?? null,
+            // link: p.querySelector(".overlay .nav_links")?.href ?? null,
+            links: Array.from(p.querySelectorAll(".overlay .nav_links")).map(a => ({
+            href: a.href,
+            text: a.textContent.trim(),
+            icon: a.querySelector("i")?.className ?? ""
+            })),
+
             categories: (p.dataset.category || "").split(/\s+/).filter(Boolean)
         }));
     }
@@ -121,13 +127,15 @@ function abrirEnNuevaPestaña() {
                 <div class="slide-content">
                     <h3>${it.title}</h3>
                     <p>${it.desc}</p>
-                    ${
-                        it.link
-                        ? `<a href="${it.link}" target="_blank" class="nav_links">
-                              <i class="fa-brands fa-github"></i> Repo en GitHub
-                           </a>`
+                    ${it.links && it.links.length
+                        ? it.links.map(l => `
+                            <a href="${l.href}" target="_blank" class="nav_links">
+                                ${l.icon ? `<i class="${l.icon}"></i>` : ""} ${l.text}
+                            </a>
+                        `).join("")
                         : ""
                     }
+
                 </div>
             `;
             track.appendChild(card);
@@ -226,7 +234,7 @@ function abrirEnNuevaPestaña() {
             } else {
                 goTo(currentIndex + 1);
             }
-        }, 3500);
+        }, 17500); /*-- cada 17.5 segundos*/
     }
 
     function stopAutoSlide() {
@@ -306,7 +314,8 @@ const popup = document.getElementById("popupProyecto");
 const popupImg = document.getElementById("popupImg");
 const popupTitle = document.getElementById("popupTitle");
 const popupDesc = document.getElementById("popupDesc");
-const popupLink = document.getElementById("popupLink");
+const popupLinks = document.getElementById("popupLinks");
+
 const popupCloseBtn = document.querySelector(".popup-close");
 
 const btnPrev = document.querySelector(".popup-prev");
@@ -323,7 +332,14 @@ function mostrarProyecto(i) {
     popupImg.src = p.img;
     popupTitle.textContent = p.title;
     popupDesc.innerHTML = p.descCompleta;
-    popupLink.href = p.link ?? "#";
+    popupLinks.innerHTML = p.links.map(l => `
+    <a href="${l.href}" target="_blank"
+       class="popup-github ${l.text.toLowerCase().includes('visita') ? 'popup-live' : ''}">
+        ${l.icon ? `<i class="${l.icon}"></i>` : ""} ${l.text}
+    </a>
+`).join("");
+
+
 }
 
 /* Abrir popup: recibe (array, índice) */

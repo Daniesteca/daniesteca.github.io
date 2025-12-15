@@ -299,6 +299,7 @@
                     <button class="filtro-btn" data-filter="javascript">JavaScript</button>
                     <button class="filtro-btn" data-filter="fullstack">FullStack</button>
                     <button class="filtro-btn" data-filter="landing">Landing Page</button>
+                    <button class="filtro-btn" data-filter="API">API</button>
                 </div>
 
                 <!-- ==== CARRUSEL ==== -->
@@ -323,7 +324,28 @@
                 <!-- Fuente oculta de proyectos (se usa como base para JS) -->
                 <div class="galeria fuente-proyectos" aria-hidden="true" style="display:none;">
 
-                    <!-- === TARJETA 1 === -->
+                    <!-- === TARJETA 7 === -->
+                    <div class="carousel-card" data-category="frontend fullstack javascript API ">
+                        <img src="img/pokedex.jpg">
+                        <div class="overlay">
+                            <h3>Pokedex</h3><br>
+                            <!-- DESCRIPCIÓN LARGA SOLO PARA POPUP -->
+                                <p class="desc-larga"> Una Pokédex interactiva desarrollada en HTML, CSS y JavaScript que consume datos desde la PokéAPI.
+                                Permite consultar Pokémon, ver sus estadísticas, tipos, imágenes y más, a través de una interfaz moderna y responsive.</p><br>
+                                 <!-- Descripción corta visible en carrusel -->
+                                <p>Html | CSS | JavaScript (ES6+)</p><br>
+                                <p>Node | Express | ejs</p><br>
+                                <p>PokéAPI</p><br>
+                                    <a href="https://github.com/Daniesteca/POKEDEX" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+                                    <a href="https://palegoldenrod-elk-114521.hostingersite.com/"
+                                    class="nav_links" target="_blank"><i class="fa-solid fa-globe" ></i>Visita la Pokédex</a>
+                                
+
+                                
+                        </div>
+                    </div>
+
+                    <!-- === TARJETA 6 === -->
                     <div class="carousel-card" data-category="frontend fullstack javascript">
                         <img src="img/p8.jpg">
                         <div class="overlay">
@@ -340,7 +362,7 @@
                         </div>
                     </div>
 
-                    <!-- === TARJETA 2 === -->
+                    <!-- === TARJETA 5 === -->
                     <div class="carousel-card" data-category="fullstack javascript frontend">
                         <img src="img/p3.jpg">
                         <div class="overlay">
@@ -351,7 +373,7 @@
                         </div>
                     </div>
 
-                    <!-- === TARJETA 3 === -->
+                    <!-- === TARJETA 4 === -->
                     <div class="carousel-card" data-category="javascript">
                         <img src="img/p5.jpg">
                         <div class="overlay">
@@ -363,38 +385,44 @@
                         </div>
                     </div>
 
-                    <!-- === TARJETA 4 === -->
+                    <!-- === TARJETA 3 === -->
                     <div class="carousel-card" data-category="javascript ">
                         <img src="img/p7.jpg">
                         <div class="overlay">
                             <h3>Diseño de blog</h3><br>
                             <p class="desc-larga">página web en la que se publican regularmente artículos cortos con contenido actualizado y novedoso sobre cocina.</p><br>
                             <p>Html | CSS | JavaScript</p><br>
+
                             <a href="https://github.com/Daniesteca/Cocina_para_todos" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+
                         
                         </div>
                     </div>
 
-                    <!-- === TARJETA 5 === -->
+                    <!-- === TARJETA 2 === -->
                     <div class="carousel-card" data-category="frontend javascript">
                         <img src="img/p6.jpg">
                         <div class="overlay">
                             <h3>Web de ventas</h3><br>
                             <p class="desc-larga">Pagina web para la comercializacion de productos digitales, como  venta de cursos online</p><br>
                             <p>Html | CSS | JavaScript</p><br>
+
                             <a href="https://github.com/Daniesteca/Landing-Page-Css" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+
                         
                         </div>
                     </div>
 
-                    <!-- === TARJETA 6 === -->
+                    <!-- === TARJETA 1 === -->
                     <div class="carousel-card" data-category="landing frontend">
                         <img src="img/p1.jpg">
                         <div class="overlay">
                             <h3>Diseño de Landing page </h3><br>
                             <p class="desc-larga">venta de productos y servicios para negocios</p><br>
                             <p>HTML | CSS</p><br>
+
                             <a href="https://github.com/Daniesteca/Web_ventas_barb_port" class="nav_links" target="_blank"><i class="fa-brands fa-github" ></i>Repo en GitHub</a>
+
                         
                         </div>
                     </div>
@@ -488,10 +516,7 @@
 
                         <p id="popupDesc"></p>
                     </div>
-                    <a id="popupLink" href="#" target="_blank" class="popup-github">
-                        <i class="fa-brands fa-github"></i> Ver repositorio
-                    </a>
-                
+                    <div id="popupLinks"></div>
                 </div>
             </div>
             <!-- ========================================================= -->

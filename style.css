@@ -659,16 +659,16 @@ html, body {
     background: #111;
     border: 1px solid #fff2;
     border-radius: 10px;
-    padding-bottom: 10px;
-    overflow: hidden;
+    padding-bottom: 20px;
+    /* overflow: hidden; */
+    overflow: visible;
     display: flex;
     flex-direction: column;
 
     /* TAMAÑO FIJO */
     min-width: 300px;
     max-width: 300px;
-    height: 380px;
-
+    height: 420px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.35);
 }
 
@@ -695,7 +695,6 @@ html, body {
 .carousel-card .desc-larga {
     display: none;
 }
-
 
 
 
@@ -948,6 +947,14 @@ footer .arriba{
 .popup-github:hover {
     background: #b96bdb;
 }
+
+.popup-live {
+    background: #279eae;
+}
+.popup-live:hover {
+    background: #2ea7cc;
+}
+
 
 .popup-close {
     position: absolute;
