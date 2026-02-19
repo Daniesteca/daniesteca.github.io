@@ -254,6 +254,8 @@ html, body {
 
 /* SECTION SKILLS */
 
+
+
 .skills{
     background-color: #252a2e;
     color: #fff;
@@ -272,7 +274,8 @@ html, body {
 }
 
 .skills .fila{
-    display:flex
+    display:flex;
+    list-style: none; 
 }
 .skills .fila .col{
     width: 50%;
@@ -284,6 +287,17 @@ html, body {
     font-family: 'Righteous';
     margin-bottom: 25px;
 }
+
+.descripcion ul {
+    list-style: none;   
+    padding: 0;         
+    margin: 0;          
+}
+
+.descripcion li {
+    margin-bottom: 6px;
+}
+
 
 .skills .skill > span{
     font-weight: bold;
